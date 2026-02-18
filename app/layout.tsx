@@ -19,10 +19,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${jostSans.className} antialiased`}
-      >
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${jostSans.className} antialiased`}>
          <ThemeProvider
             attribute="class"
             defaultTheme="system"
