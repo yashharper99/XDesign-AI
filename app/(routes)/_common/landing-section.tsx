@@ -3,9 +3,12 @@ import React, { useState } from "react";
 import PromptInput from "@/components/prompt-input";
 import { Suggestion, Suggestions } from "@/components/ai-elements/suggestion";
 import Header from "./header";
+import { useCreateProject } from "@/features/use-project";
 
 const LandingSection = () => {
     const [promptText, setPromptText] = useState<string>("")
+
+    const {mutate, isPending} = useCreateProject()
 
     const suggestions = [
     {
