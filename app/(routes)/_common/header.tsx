@@ -3,6 +3,7 @@
 import Logo from "@/components/logo";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { LoginLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
@@ -49,7 +50,9 @@ const Header = () => {
                           )}
                         />
                     </Button>
-                    <Button>Sign in</Button>
+                    <LoginLink>
+                      <Button>Sign in</Button>
+                    </LoginLink>
                  </div>
                 </div>
             </header>
