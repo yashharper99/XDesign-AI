@@ -8,7 +8,7 @@ import { useCreateProject } from "@/features/use-project";
 const LandingSection = () => {
     const [promptText, setPromptText] = useState<string>("")
 
-    const {mutate, isPending} = useCreateProject()
+    const {mutate, isPending} = useCreateProject();
 
     const suggestions = [
     {
@@ -45,6 +45,11 @@ const LandingSection = () => {
 
     const handleSuggestionClick = (val: string) => {
         setPromptText(val);
+    };
+
+    const handleSubmit = () => {
+        if (!promptText) return;
+        mutate(promptText);
     };
 
     return (
@@ -88,8 +93,8 @@ const LandingSection = () => {
                                     className="ring-2 ring-primary"
                                     promptText={promptText}
                                     setPromptText={setPromptText}
-                                    isLoading={false}
-                                    onSubmit={() => { }}
+                                    isLoading={isPending}
+                                    onSubmit={handleSubmit}
                                 />
                             </div>
 
